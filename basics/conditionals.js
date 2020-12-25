@@ -1,80 +1,85 @@
+//-----------If/Else-----------//
 
-//----------Passing arguments----------// 
-const learnFunctions = (param1, param2) =>{
+const canYouDrink = (age) =>{
+	if(age < 21){
+		return "Too young, drink some juice";
+	}
 
-	console.log(param1, param2);
-	
-	//Reversed
-	console.log(param2, param1);
-	};
-	learnFunctions("Sup", "Dude");
-	
-	//-----------Scope----------//
-	
-	//Global
-		//Can be used in all functions
-	let globalVar = "Outside the function scope";
-	
-	const logGlobalVariable = () =>{
-		console.log(globalVar);
+	else if(age >= 21){
+		return "You can drink";
 	}
-	logGlobalVariable();
+
+	return "No age input"
+};
+	//False, Need an input
+	console.log(canYouDrink());
+
+	//True
+	console.log(canYouDrink(30));
 	
-	//Local
-		//Variable is only visible within the function
-	const logLocalVar = () =>{
-	
-		var localVar = "Inside the scope of the function";
-		console.log(localVar);
-	}
-	logLocalVar();
-	
-	//ReferenceError: localVar is not defined
-		//console.log(localVar);
-	
-	//Global VS. Local variables in functions
-	
-	let myGlobalVarible = 50
-	
-	const logBothVariables = () =>{
-		let myLocalVariable = 20
-		let myGlobalVarible = 10
+	//True, but too young
+	console.log(canYouDrink(19));
+
+//-----------Case/Switch----------//
+
+const findBriefCase = (value) =>{
+
+	result = ""
+	switch(value){
+		case "black": 
+		result = "Not my breifcase";
+			break;
 		
-		// 30 since myGlobalVariable is visible locally
-		console.log(myLocalVariable + myGlobalVarible)
+		case "yellow" :
+		result = "not it"
+			break;
+	
+		case "green" : 
+		result = "Thats my briefcase!"
+			break;
+
+		
+	//-----Default Statement-----//
+	default :
+	case " ":
+	result = "I have not seen a breifcase"
+	break;
 	}
-	logBothVariables();
+
+	return result;
 	
-	//myGlobalVariable is 50 outside the function scope
-	console.log(myGlobalVarible); 
-	
-	//----------Return----------//
-	
-	let mySkills = "an awesome Coder";
-	
-	const addMyTitle = (someVar) =>{
-		return "James is " + someVar
+
+}
+
+	console.log(findBriefCase("black"));
+	console.log(findBriefCase());
+	console.log(findBriefCase("yellow"));
+	console.log(findBriefCase("green"));
+
+	//-----Multiple cases-----//
+
+const findRideHeight = (heightInFeet) =>{
+	let result = "";
+
+	switch(heightInFeet){
+		case 3 :   
+		case 4 : 
+		case 5 : 
+			result = "Too short";	
+			break;
+			
+		case 6 :
+		result = "You can ride";
+		break;
 	}
-	
-		console.log(addMyTitle(mySkills));
-		console.log(addMyTitle("Awesome"));
-	
-	//Undefined
-	const returnMyValue = (aVar) =>{
-		result = aVar + aVar;
-	}
-	
-		//Since no return statement is initialized
-		// returnMyValue(10) = undefined
-		console.log(returnMyValue(10));
-	
-	//Values assigned to variable
-	
-		const addToMyTitle = (aVar) =>{
-			return "James the " + aVar;
-		}
-	
-	coolDude = addToMyTitle("cool guy");
-	
-	// James the Cool guy
-	console.log(coolDude);
+
+	return result;
+}
+
+	console.log(findRideHeight(5));
+	console.log(findRideHeight(6));
+
+	// If number is not in the case, nothing will be returned
+	console.log(findRideHeight(2));
+	console.log(findRideHeight(3));
+

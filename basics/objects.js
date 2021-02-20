@@ -45,16 +45,16 @@ let myActivities = {
  }
  logMyDog();
 
- //Properties as variables 
+ //-----Properties as variables-----// 
  let myPassenger = myDog["name"]
  let myRide = myCar.model
 
 
- const whoRidesWithMe = (aPassenger) =>{
+const whoRidesWithMe = (aPassenger) =>{
 	 let driver = "James";
 
 	return driver + " and " + aPassenger;
- }
+}
 
 let whatIdoOnWeekends = whoRidesWithMe(myPassenger)
 
@@ -69,7 +69,7 @@ const changeMyWeekdayActivity = () =>{
 }
 changeMyWeekdayActivity();
 
-//Adding and deleting properties 
+//-----Adding and deleting properties-----//
 myDog.activity = "bark"
 console.log(myDog);
 
@@ -114,7 +114,7 @@ let myMusic = [{
 	  }
   ]
 
-//Accessing nested objects and arrays
+//-----Accessing nested objects and arrays-----//
 var myStorage = {
 	"car": {
 	  "inside": {
